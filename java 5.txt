@@ -1,0 +1,319 @@
+public class Multbytwo{
+
+     public static void main(String []args){
+        System.out.println("akshar30");
+        int i;
+        int num = 0xFFFFFFE;
+        
+        for(i=0;i<4;i++)
+        {
+            num = num <<1 ;
+            System.out.println(num);
+            
+        }
+        
+     }
+}
+output
+$javac Multbytwo.java
+$java -Xmx128M -Xms16M Multbytwo
+akshar30
+536870908
+1073741816
+2147483632
+-32
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+public class hexbyte{
+
+     public static void main(String []args){
+        System.out.println("akshar31");
+        char hex[] = {
+            '0' , '1' , '2' , '3' , '4' , '5' , '6' , '7',
+            '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'
+
+        };
+        byte b = (byte) 0xf1;
+        System.out.println("b=0x" + hex[(b>>4) & 0x0f] +hex[b & 0x0f]) ;
+     }
+}
+output
+$javac hexbyte.java
+$java -Xmx128M -Xms16M hexbyte
+akshar31
+b=0xf1
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+public class byteshift{
+
+     public static void main(String []args){
+        System.out.println("akshar32");
+        char hex[] = {
+         '0', '1', '2', '3', '4', '5', '6', '7',
+           '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'
+        };
+        byte b = (byte) 0xf1;
+        byte c = (byte) (b >> 4);
+        byte d = (byte) (b >>> 4);
+        byte e = (byte) ((b & 0xff) >> 4);
+        System.out.println(" b = 0x"
+         + hex[(b >> 4) & 0x0f] + hex[b & 0x0f]);
+        System.out.println(" b >> 4 = 0x"
+          + hex[(c >> 4) & 0x0f] + hex[c & 0x0f]);
+        System.out.println(" b >>> 4 = 0x"
+          + hex[(d >> 4) & 0x0f] + hex[d & 0x0f]);
+        
+             System.out.println("(b & 0xff) >> 4 = 0x"
+              + hex[(e >> 4) & 0x0f] + hex[e & 0x0f]);
+     }
+}
+output
+$javac byteshift.java
+$java -Xmx128M -Xms16M byteshift
+akshar32
+ b = 0xf1
+ b >> 4 = 0xff
+ b >>> 4 = 0xff
+(b & 0xff) >> 4 = 0x0f
+//////////////////////////////////////////////////////////////////////////////////////////////////
+public class opbitequals{
+
+     public static void main(String []args){
+        System.out.println("akshar33");
+        int a = 1;
+        int b = 2 ;
+        int c = 3;
+        
+        a |= 4 ;
+        b >>= 1;
+        c <<= 1;
+        a ^= c ;
+        System.out.println("a =" + a);
+        System.out.println("b =" + b);
+        System.out.println("c =" + c);
+     }
+}
+output
+$javac opbitequals.java
+$java -Xmx128M -Xms16M opbitequals
+akshar33
+a =3
+b =1
+c =6
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+public class boollogic{
+
+     public static void main(String []args){
+        System.out.println("akshar34");
+        boolean a =true ;
+        boolean b = false ;
+        boolean c = a|b;
+        boolean d = a&b;
+        boolean e = a^b;
+        boolean f = (!a&b) | (a& !b);
+        boolean g = !a;
+        
+        System.out.println(" a = " + a);
+        System.out.println(" b = " + b);
+        System.out.println(" a|b = " + c);
+        System.out.println(" a&b = " + d);
+        System.out.println(" a^b = " + e);
+        System.out.println("!a&b|a&!b = " + f);
+        System.out.println(" !a = " + g);
+    }
+}
+output
+$javac boollogic.java
+$java -Xmx128M -Xms16M boollogic
+akshar34
+ a = true
+ b = false
+ a|b = true
+ a&b = false
+ a^b = true
+!a&b|a&!b = true
+ !a = false
+////////////////////////////////////////////////////////////////////////////////////////////////////
+public class HelloWorld{
+
+     public static void main(String []args){
+        System.out.println("akshar35");
+        int i , k ;
+        i =10;
+        k=i<0?-i:i;
+        System.out.print("Absolute value of");
+        System.out.print(i+"is " + k);
+        
+        i=-10;
+        k=i<0?-i:i;
+        System.out.print("\nAbsolute value of");
+        System.out.println(i+"is " + k);
+        
+     }
+}
+output
+$javac HelloWorld.java
+$java -Xmx128M -Xms16M HelloWorld
+akshar35
+Absolute value of10is 10
+Absolute value of-10is 10
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+public class ifelse{
+
+     public static void main(String []args){
+        System.out.println("akshar36");
+        int month =4 ;
+        String season;
+        if(month==12 || month == 3 || month == 2)
+         season = "winter";
+        else if(month == 3 || month == 5|| month == 4)
+         season = "spring";
+        else if(month == 9 || month == 7 || month == 8)
+          season = "Autumn ";
+        else 
+        season = " Bogus Month ";
+        
+        System.out.print("April is in the " + season +" .");
+        
+     }
+}
+output
+$javac ifelse.java
+$java -Xmx128M -Xms16M ifelse
+akshar36
+April is in the spring .
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+public class HelloWorld{
+
+     public static void main(String []args){
+        System.out.println("akshar37");
+        for(int i =0 ; i<6 ; i++)
+        switch(i)
+        {
+        case 0 :
+            System.out.println("i is zero");
+            break ;
+        case 1 :
+            System.out.println("i is one ");
+            break ;
+        case 2 :
+            System.out.println("i is two ");
+            break ;
+        case 3 :
+            System.out.println("i is three");
+            break ;
+        default :
+            System.out.println("i is greater than 3 ");
+        }
+        
+     }
+}
+output
+$javac HelloWorld.java
+$java -Xmx128M -Xms16M HelloWorld
+akshar37
+i is zero
+i is one 
+i is two 
+i is three
+i is greater than 3 
+i is greater than 3 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+public class missingbreak {
+
+     public static void main(String []args){
+        System.out.println("akshar38");
+        for(int i=0; i<12; i++)
+        switch(i) {
+        case 0:
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+        System.out.println("i is less than 5");
+        break;
+        case 5:
+        case 6:
+        case 7:
+        case 8:
+        case 9:
+        System.out.println("i is less than 10");
+        break;
+        default:
+         System.out.println("i is 10 or more");
+         
+        }
+        
+     }
+}
+output
+$javac missingbreak.java
+$java -Xmx128M -Xms16M missingbreak
+akshar38
+i is less than 5
+i is less than 5
+i is less than 5
+i is less than 5
+i is less than 5
+i is less than 10
+i is less than 10
+i is less than 10
+i is less than 10
+i is less than 10
+i is 10 or more
+i is 10 or more
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+public class Whiledemo{
+
+     public static void main(String []args){
+        System.out.println("akshar39");
+        int n =10;
+        
+        while(n>0){
+            System.out.println("\ntrick"+ n);
+            n--;
+        }
+        
+     }
+}
+output
+$javac Whiledemo.java
+$java -Xmx128M -Xms16M Whiledemo
+akshar39
+
+trick10
+
+trick9
+
+trick8
+
+trick7
+
+trick6
+
+trick5
+
+trick4
+
+trick3
+
+trick2
+
+trick1
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+public class nobody{
+
+     public static void main(String []args){
+        System.out.println("akshar40");
+        int i , j ;
+        i=100;
+        j=200;
+        
+        while (++i   <  --j);
+        System.out.println("midpoint is " + i);
+        
+     }
+}
+output
+$javac nobody.java
+$java -Xmx128M -Xms16M nobody
+akshar40
+midpoint is 150
